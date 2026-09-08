@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Racing - Spa-Francorchamps</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-container">
+      <div class="f1-logo">F1</div>
+      <h1 class="loading-title">SPA-FRANCORCHAMPS</h1>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="loading-text" id="loading-text">Chargement des modèles...</p>
+    </div>
+  </div>
+
+  <!-- Car Selection Screen -->
+  <div id="selection-screen" class="hidden">
+    <div class="selection-header">
+      <h1 class="selection-title">CHOISISSEZ VOTRE VOITURE</h1>
+      <p class="selection-subtitle">Circuit de Spa-Francorchamps</p>
+    </div>
+    <div id="car-viewport"></div>
+    <div class="car-cards">
+      <div class="car-card" data-car="mclaren">
+        <div class="card-accent mclaren-accent"></div>
+        <div class="card-content">
+          <span class="car-year">2021</span>
+          <h2 class="car-name">McLaren</h2>
+          <p class="car-model">MCL35M</p>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Mercedes</span></div>
+            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+          </div>
+          <button class="select-btn mclaren-btn">SÉLECTIONNER</button>
+        </div>
+      </div>
+      <div class="car-card" data-car="ferrari">
+        <div class="card-accent ferrari-accent"></div>
+        <div class="card-content">
+          <span class="car-year">2019</span>
+          <h2 class="car-name">Ferrari</h2>
+          <p class="car-model">SF90</p>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Ferrari</span></div>
+            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+          </div>
+          <button class="select-btn ferrari-btn">SÉLECTIONNER</button>
+        </div>
+      </div>
+      <div class="car-card" data-car="redbull">
+        <div class="card-accent redbull-accent"></div>
+        <div class="card-content">
+          <span class="car-year">2024</span>
+          <h2 class="car-name">Red Bull</h2>
+          <p class="car-model">RB20</p>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Honda RBPT</span></div>
+            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+          </div>
+          <button class="select-btn redbull-btn">SÉLECTIONNER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Racing HUD -->
+  <div id="racing-hud" class="hidden">
+    <div class="hud-top">
+      <div class="hud-speed">
+        <span class="speed-value" id="speed-value">0</span>
+        <span class="speed-unit">KM/H</span>
+      </div>
+      <div class="hud-gear">
+        <span class="gear-label">GEAR</span>
+        <span class="gear-value" id="gear-value">N</span>
+      </div>
+    </div>
+    <div class="hud-bottom">
+      <div class="hud-controls">
+        <span>↑ Accélérer</span>
+        <span>↓ Freiner</span>
+        <span>← → Tourner</span>
+        <span>C Changer vue</span>
+        <span>R Réinitialiser</span>
+        <span>ESC Menu</span>
+      </div>
+    </div>
+    <div class="hud-rev-counter">
+      <div class="rev-bar" id="rev-bar"></div>
+    </div>
+  </div>
+
+  <!-- 3D Canvas -->
+  <canvas id="game-canvas"></canvas>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
