@@ -23,48 +23,48 @@
   <!-- Car Selection Screen -->
   <div id="selection-screen" class="hidden">
     <div class="selection-header">
-      <h1 class="selection-title">CHOISISSEZ VOTRE VOITURE</h1>
-      <p class="selection-subtitle">Circuit de Spa-Francorchamps</p>
+      <h1 class="selection-title">PORTFOLIO INTERACTIF</h1>
+      <p class="selection-subtitle">Samuel - Développeur Web & 3D</p>
     </div>
     <div id="car-viewport"></div>
     <div class="car-cards">
-      <div class="car-card" data-car="mclaren">
+      <div class="car-card" data-car="mclaren" data-section="about">
         <div class="card-accent mclaren-accent"></div>
         <div class="card-content">
-          <span class="car-year">2021</span>
-          <h2 class="car-name">McLaren</h2>
-          <p class="car-model">MCL35M</p>
+          <span class="car-year">Parcours</span>
+          <h2 class="car-name">À Propos</h2>
+          <p class="car-model">McLaren MCL35M</p>
           <div class="car-specs">
-            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Mercedes</span></div>
-            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+            <div class="spec"><span class="spec-label">Expérience</span><span class="spec-value">3 Ans</span></div>
+            <div class="spec"><span class="spec-label">Passion</span><span class="spec-value">Tech & 3D</span></div>
           </div>
-          <button class="select-btn mclaren-btn">SÉLECTIONNER</button>
+          <button class="select-btn mclaren-btn">DÉCOUVRIR</button>
         </div>
       </div>
-      <div class="car-card" data-car="ferrari">
+      <div class="car-card" data-car="ferrari" data-section="projects">
         <div class="card-accent ferrari-accent"></div>
         <div class="card-content">
-          <span class="car-year">2019</span>
-          <h2 class="car-name">Ferrari</h2>
-          <p class="car-model">SF90</p>
+          <span class="car-year">Réalisations</span>
+          <h2 class="car-name">Projets</h2>
+          <p class="car-model">Ferrari SF90</p>
           <div class="car-specs">
-            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Ferrari</span></div>
-            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+            <div class="spec"><span class="spec-label">Stack</span><span class="spec-value">Fullstack JS</span></div>
+            <div class="spec"><span class="spec-label">Spécialité</span><span class="spec-value">Web 3D</span></div>
           </div>
-          <button class="select-btn ferrari-btn">SÉLECTIONNER</button>
+          <button class="select-btn ferrari-btn">VOIR LES PROJETS</button>
         </div>
       </div>
-      <div class="car-card" data-car="redbull">
+      <div class="car-card" data-car="redbull" data-section="contact">
         <div class="card-accent redbull-accent"></div>
         <div class="card-content">
-          <span class="car-year">2024</span>
-          <h2 class="car-name">Red Bull</h2>
-          <p class="car-model">RB20</p>
+          <span class="car-year">Disponibilité</span>
+          <h2 class="car-name">Contact</h2>
+          <p class="car-model">Red Bull RB20</p>
           <div class="car-specs">
-            <div class="spec"><span class="spec-label">Moteur</span><span class="spec-value">Honda RBPT</span></div>
-            <div class="spec"><span class="spec-label">Puissance</span><span class="spec-value">1000 ch</span></div>
+            <div class="spec"><span class="spec-label">Email</span><span class="spec-value">Contactez-moi</span></div>
+            <div class="spec"><span class="spec-label">GitHub</span><span class="spec-value">SamouleR</span></div>
           </div>
-          <button class="select-btn redbull-btn">SÉLECTIONNER</button>
+          <button class="select-btn redbull-btn">CONTACT</button>
         </div>
       </div>
     </div>
@@ -94,6 +94,10 @@
     </div>
     <div class="hud-rev-counter">
       <div class="rev-bar" id="rev-bar"></div>
+    </div>
+    <div id="portfolio-panel" class="portfolio-panel">
+      <h2 id="portfolio-title">Titre</h2>
+      <div id="portfolio-content" class="portfolio-content">Contenu...</div>
     </div>
   </div>
 

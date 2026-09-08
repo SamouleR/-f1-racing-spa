@@ -11,6 +11,23 @@ let currentScene = 'loading';
 let carModels = {};
 let circuitModel = null;
 let selectedCar = null;
+let selectedSection = null;
+
+// Portfolio Content Data
+const portfolioData = {
+  'mclaren': {
+    title: 'Mon Parcours',
+    content: '<p>Développeur passionné par le web et la 3D, j\'ai commencé mon aventure il y a 3 ans.</p><ul><li>Expérience en agence web</li><li>Maîtrise de JavaScript, React, Three.js</li><li>Création d\'expériences immersives</li></ul>'
+  },
+  'ferrari': {
+    title: 'Mes Projets',
+    content: '<p>Voici quelques-unes de mes réalisations techniques :</p><ul><li><strong>F1 Racing 3D</strong> : Ce portfolio interactif en WebGL</li><li><strong>E-commerce</strong> : Plateforme complète avec panier et paiement</li><li><strong>Dashboard Admin</strong> : Interface de gestion de données complexe</li></ul>'
+  },
+  'redbull': {
+    title: 'Me Contacter',
+    content: '<p>Vous cherchez un développeur créatif pour votre prochain projet ? Discutons-en !</p><ul><li><strong>Email</strong>: contact@samuel-portfolio.com</li><li><strong>GitHub</strong>: github.com/SamouleR</li><li><strong>LinkedIn</strong>: /in/samuel-dev</li></ul>'
+  }
+};
 let selectedCarModel = null;
 
 // Car physics
@@ -421,10 +438,18 @@ function resetCarHighlights() {
 
 function selectCar(carName) {
   selectedCar = carName;
-  console.log('Selected car:', carName);
+  selectedSection = carName;
+  console.log('Selected section:', carName);
 
   // Transition animation
   document.getElementById('selection-screen').classList.add('fade-out');
+
+  // Inject portfolio content
+  const data = portfolioData[carName];
+  if (data) {
+    document.getElementById('portfolio-title').innerHTML = data.title;
+    document.getElementById('portfolio-content').innerHTML = data.content;
+  }
 
   setTimeout(() => {
     document.getElementById('selection-screen').classList.add('hidden');
@@ -601,6 +626,11 @@ function startRacing() {
   // Show HUD
   document.getElementById('racing-hud').classList.remove('hidden');
   document.getElementById('racing-hud').classList.add('fade-in');
+  
+  // Show Portfolio Panel
+  setTimeout(() => {
+    document.getElementById('portfolio-panel').classList.add('visible');
+  }, 1000);
 
   // Setup key listener for camera toggle and escape
   window.addEventListener('keydown', handleRacingKeys);
@@ -657,6 +687,11 @@ function resetCarPosition() {
 
 function backToSelection() {
   currentScene = 'selection';
+  
+  // Hide racing UI and Portfolio panel
+  document.getElementById('racing-hud').classList.add('hidden');
+  document.getElementById('racing-hud').classList.remove('fade-in');
+  document.getElementById('portfolio-panel').classList.remove('visible');
 
   // Remove car from racing scene
   const playerCar = racingScene.getObjectByName('playerCar');
